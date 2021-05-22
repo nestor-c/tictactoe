@@ -7,7 +7,7 @@ class Game{
     private:
         Grid grid;
         std::pair<int,int> lastChoice;
-        char currPlayer;
+        int currPlayer;
         char player1;
         char player2;
         bool checkHorizontal();
@@ -19,6 +19,6 @@ class Game{
         void fillChoice(int);
         void startPlay();
         void mainLoop();
-        
+        void showOptions();        
 };
 #endif

@@ -1,4 +1,22 @@
 #include "Game.h"
+#include "time.h"
+
+
+Game::Game():player1('X'),player2('O'){
+        srand(time(NULL));
+        currPlayer = rand()%2 + 1;
+
+        startPlay();
+        mainLoop();
+}
+
+void Game::startPlay(){
+        char currToken;
+        currPlayer == 1 ? currToken = 'X': currToken = 'O';
+        std::cout << "Welcome to tic-tac-toe! Match three of the same tokens horizontally, vertically, or diagonally and win!" << std::endl;
+        std::cout << "Player " << currPlayer << "(" << currToken <<") goes first!" << std::endl;
+        grid.printGrid();
+}
 
 void Game::fillChoice(int choice){
         grid.setGrid(choice, currPlayer);
@@ -73,4 +91,15 @@ bool Game::checkDiagonal(){
         }
 
         return false;
+}
+
+void Game::showOptions(){
+        int options = 1;
+        for (int i = 0; i < grid.numRows();i++){
+                for (int j = 0; j<grid.numCols();j++){
+                        if (grid.checkGrid(i,j) == ' ') std::cout << options << " ";
+                        options++;
+                }
+        }
+        std::cout << std::endl;
 }

@@ -1,5 +1,5 @@
-#include "Grid.cpp"
+#include "Game.h"
 
 int main(){
-    Grid grid;
+   Game newGame;
 }

@@ -7,7 +7,6 @@ Grid::Grid():rows(3),cols(3){
                         grid[i][j] = ' ';           
                 }
         }
-        printGrid();
 }
 
 void Grid::drawRow(int row){
@@ -51,6 +50,18 @@ void Grid::setGrid(int choice, char player){
 
 char Grid::checkGrid(int row, int col){
         return grid[row][col];
+}
+
+int Grid::gridSize(){
+      return sizeof(grid)/sizeof(grid[0]);
+}
+
+int Grid::numRows(){
+        return rows;
+}
+
+int Grid::numCols(){
+        return cols;
 }
 
      

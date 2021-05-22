@@ -14,5 +14,8 @@ class Grid{
         void printGrid();
         void setGrid(int,char);
         char checkGrid(int, int);
+        int gridSize();
+        int numRows();
+        int numCols();
 };
 #endif
