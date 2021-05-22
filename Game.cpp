@@ -30,7 +30,6 @@ bool Game::checkHorizontal(){
 }
 
 bool Game::checkVertical(){
-
         int row=lastChoice.first;
         int col=lastChoice.second;
 
@@ -46,6 +45,29 @@ bool Game::checkVertical(){
         }
         else if (row == 2 ){
                 if (grid.checkGrid(row-2,col) == grid.checkGrid(row,col) && grid.checkGrid(row-1,col) == grid.checkGrid(row-2,col)){
+                        return true;
+                }
+        }
+
+        return false;
+}
+
+bool Game::checkDiagonal(){
+        int row=lastChoice.first;
+        int col=lastChoice.second;
+
+        if (row == 0 && col == 0){
+                if (grid.checkGrid(row+1,col+1) == grid.checkGrid(row,col) && grid.checkGrid(row+1,col+1) == grid.checkGrid(row+2,row+2)){
+                        return true;
+                } 
+        }
+        else if (row == 1 && col == 1){
+                if (grid.checkGrid(row-1,col-1) == grid.checkGrid(row,col) && grid.checkGrid(row+1,col+1) == grid.checkGrid(row-1,col-1)){
+                        return true;
+                }
+        }
+        else if (row == 2 && col == 2){
+                if (grid.checkGrid(row-2,col-2) == grid.checkGrid(row,col) && grid.checkGrid(row-1,col-1) == grid.checkGrid(row-2,col-2)){
                         return true;
                 }
         }
