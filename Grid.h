@@ -12,6 +12,7 @@ class Grid{
     public:
         Grid();
         void printGrid();
-        void fillGrid(int);
+        void setGrid(int,char);
+        char checkGrid(int, int);
 };
 #endif
