@@ -5,6 +5,7 @@
 
 class Game{
     private:
+        bool win = false;
         Grid grid;
         std::pair<int,int> lastChoice;
         int currPlayer;
@@ -13,6 +14,7 @@ class Game{
         bool checkHorizontal();
         bool checkVertical();
         bool checkDiagonal();
+        void checkWin();
 
     public:
         Game();
